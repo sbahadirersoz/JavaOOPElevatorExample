@@ -1,10 +1,9 @@
-import java.io.IOException;
 
 public class Elevator implements IElevator  {
     private boolean openDoors;
     private boolean stopped;
-    private Floor topFloor =Floor.FOURTH;
-    private Floor bottomFlor=Floor.ZERO;
+    private final Floor topFloor =Floor.FOURTH;
+    private final Floor bottomFlor=Floor.ZERO;
     private Floor currentFloor=Floor.ZERO;
     @Override
     public void go(Floor whichFloor)
@@ -67,16 +66,8 @@ public class Elevator implements IElevator  {
         openDoors=false;
     }
 
-    @Override
-    public void preprocces()
-    {
-     if (openDoors)
-     {
-         System.out.println("Kapılar Kapatılıyor");
-         closeDoor();
-     }
-        System.out.println("Kapılar Kapatıldı Asansör Harekete Geçiyor");
-     }
+
+
 
     private Floor getCurrentFloor() {
         return currentFloor;
